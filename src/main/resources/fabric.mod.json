@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "thebrokencore",
+  "version": "${version}",
+
+  "name": "The Broken Core",
+  "description": "Work in progress...",
+  "authors": ["Larts", "Duhamster", "Marrald", "Taywarex"],
+
+  "license": "GPL-3.0-only",
+
+  "environment": "client",
+  "entrypoints": {
+    "main": ["org.enrime.thebrokencore.TheBrokenCoreMod"],
+    "client": ["org.enrime.thebrokencore.TheBrokenCoreModClient"]
+  },
+
+  "depends": {
+    "minecraft": "1.21.4"
+  }
+}

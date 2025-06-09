@@ -1,0 +1,5 @@
+{
+  "item.thebrokencore.test_item": "§oTest Item",
+  "item.thebrokencore.test_item.tooltip.line1": "§6Exists only for testing purposes",
+  "item.thebrokencore.test_item.tooltip.line2": "§6E.g., current stack has §r%s§6 item(s)"
+}

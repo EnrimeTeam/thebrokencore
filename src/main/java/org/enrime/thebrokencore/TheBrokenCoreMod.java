@@ -1,6 +1,7 @@
 package org.enrime.thebrokencore;
 
 import net.fabricmc.api.ModInitializer;
+import org.enrime.thebrokencore.block.ModBlocks;
 import org.enrime.thebrokencore.item.ModItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,5 +13,6 @@ public class TheBrokenCoreMod implements ModInitializer {
     @Override
     public void onInitialize() {
         ModItems.registerModItems();
+        ModBlocks.registerModBlocks();
     }
 }

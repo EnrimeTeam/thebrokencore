@@ -1,0 +1,6 @@
+{
+  "parent": "thebrokencore:block/vertical_slab_base",
+  "textures": {
+    "texture": "minecraft:block/bricks"
+  }
+}

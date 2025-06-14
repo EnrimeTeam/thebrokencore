@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "type=single,facing=north": { "model": "thebrokencore:block/oak_vertical_slab" },
+    "type=single,facing=east": { "model": "thebrokencore:block/oak_vertical_slab", "y": 90, "uvlock": true },
+    "type=single,facing=south": { "model": "thebrokencore:block/oak_vertical_slab", "y": 180, "uvlock": true },
+    "type=single,facing=west": { "model": "thebrokencore:block/oak_vertical_slab", "y": 270, "uvlock": true },
+
+    "type=double": { "model": "minecraft:block/oak_planks"}
+  }
+}

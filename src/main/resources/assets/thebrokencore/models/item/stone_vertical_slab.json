@@ -1,0 +1,6 @@
+{
+  "parent": "thebrokencore:item/vertical_slab_item_base",
+  "textures": {
+    "texture": "minecraft:block/stone"
+  }
+}

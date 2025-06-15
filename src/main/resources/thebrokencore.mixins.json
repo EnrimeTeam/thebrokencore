@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "org.enrime.thebrokencore.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "FenceBlockMixin",
+    "PaneBlockMixin"
+  ],
+  "client": [],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

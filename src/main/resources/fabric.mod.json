@@ -17,5 +17,9 @@
 
   "depends": {
     "minecraft": "1.21.4"
-  }
+  },
+
+  "mixins": [
+    "thebrokencore.mixins.json"
+  ]
 }

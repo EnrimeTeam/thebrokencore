@@ -1,8 +1,14 @@
 {
+  "__COMMENT__": "============ Items ============",
   "item.thebrokencore.test_item": "§oTest Item",
   "item.thebrokencore.test_item.tooltip.line1": "§6Exists only for testing purposes",
   "item.thebrokencore.test_item.tooltip.line2": "§6E.g., current stack has §r%s§6 item(s)",
+  "item.thebrokencore.poisonous_sting": "Poisonous Sting",
 
+  "__COMMENT__": "============ Spawn eggs ============",
+  "item.thebrokencore.stingray_spawn_egg": "Stingray Spawn Egg",
+
+  "__COMMENT__": "============ Blocks ============",
   "block.thebrokencore.oak_vertical_slab": "Oak Vertical Slab",
   "block.thebrokencore.stone_vertical_slab": "Stone Vertical Slab",
   "block.thebrokencore.brick_vertical_slab": "Brick Vertical Slab"

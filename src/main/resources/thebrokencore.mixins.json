@@ -6,6 +6,8 @@
   "mixins": [
     "FenceBlockMixin",
     "PaneBlockMixin"
+    "PaneBlockMixin",
+    "KnightPaintingEyesMixin"
   ],
   "client": [],
   "server": [],

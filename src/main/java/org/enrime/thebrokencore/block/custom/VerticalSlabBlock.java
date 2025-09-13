@@ -98,6 +98,7 @@ public class VerticalSlabBlock extends Block implements Waterloggable {
                 .with(WATERLOGGED, isPlacedInWater);
     }
 
+    // TODO: add comment explaining how it works
     private static Direction getFacingDirection(ItemPlacementContext ctx, double relX, double relZ) {
         Direction facing = ctx.getHorizontalPlayerFacing();
 

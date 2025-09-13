@@ -11,19 +11,12 @@ public class ModTags {
     /*
         * Memo *
         To create and use a tag:
-        1. Add a new variable:
+        1. Inside the Blocks or Items class add a new variable:
             public static final TagKey<[Block|Item]> TAG_NAME = createTag("tag_name");
-        2. Under the data/thebrokencore/tags/[block|item] add a tag_name.json:
-            {
-                values: [
-                    "...",
-                    "..."
-                ]
-            }
-        3. Write required block/item identifiers into the "values" field
-        4. Whether you need to check if the block/item is in the tag use
+        2. Add required blocks/items into the tag in Mod[Block|Item]TagProvider class
+        3. Whether you need to check if the block/item is in the tag use
             .is[In|Of](ModTags.[Block|Item].TAG_NAME)
-        */
+    */
 
     public static class Blocks {
         private static TagKey<Block> createTag(String name) {
@@ -32,6 +25,8 @@ public class ModTags {
     }
 
     public static class Items {
+        public static final TagKey<Item> REPAIRS_ICE_ARMOR = createTag("repairs_ice_armor");
+
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(TheBrokenCoreMod.MOD_ID, name));
         }

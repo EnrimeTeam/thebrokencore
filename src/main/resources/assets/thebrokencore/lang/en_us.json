@@ -4,15 +4,26 @@
   "item.thebrokencore.test_item.tooltip.line1": "§6Exists only for testing purposes",
   "item.thebrokencore.test_item.tooltip.line2": "§6E.g., current stack has §r%s§6 item(s)",
   "item.thebrokencore.poisonous_sting": "Poisonous Sting",
+  "item.thebrokencore.bloody_tear": "Bloody Tear",
+
+  "__COMMENT__": "============ Armor Items ============",
+  "item.thebrokencore.ice_helmet": "Ice Helmet",
+  "item.thebrokencore.ice_chestplate": "Ice Chestplate",
+  "item.thebrokencore.ice_leggings": "Ice Leggings",
+  "item.thebrokencore.ice_boots": "Ice Boots",
 
   "__COMMENT__": "============ Spawn eggs ============",
   "item.thebrokencore.stingray_spawn_egg": "Stingray Spawn Egg",
+  "item.thebrokencore.bateye_spawn_egg": "Bateye Spawn Egg",
 
   "__COMMENT__": "============ Blocks ============",
   "block.thebrokencore.oak_vertical_slab": "Oak Vertical Slab",
   "block.thebrokencore.stone_vertical_slab": "Stone Vertical Slab",
-  "block.thebrokencore.brick_vertical_slab": "Brick Vertical Slab"
   "block.thebrokencore.brick_vertical_slab": "Brick Vertical Slab",
+
+  "__COMMENT__": "============ Effects ============",
+  "effect.thebrokencore.mark": "Mark",
+  "effect.thebrokencore.mark_affected": "Mark Affected",
 
   "__COMMENT__": "============ Paintings ============",
   "painting.thebrokencore.the_hand_of_creation.title": "The Hand of Creation",

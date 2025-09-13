@@ -12,7 +12,8 @@
   "environment": "client",
   "entrypoints": {
     "main": ["org.enrime.thebrokencore.TheBrokenCoreMod"],
-    "client": ["org.enrime.thebrokencore.TheBrokenCoreModClient"]
+    "client": ["org.enrime.thebrokencore.TheBrokenCoreModClient"],
+    "fabric-datagen": ["org.enrime.thebrokencore.TheBrokenCoreModDataGenerator"]
   },
 
   "depends": {

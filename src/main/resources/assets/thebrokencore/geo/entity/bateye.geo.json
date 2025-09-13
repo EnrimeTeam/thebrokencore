@@ -1,0 +1,67 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bateye",
+					"pivot": [0, 4, 0],
+					"cubes": [
+						{"origin": [-4, 0, -4], "size": [8, 8, 8], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "wings",
+					"parent": "bateye",
+					"pivot": [-4, 4, 0]
+				},
+				{
+					"name": "wing_left",
+					"parent": "wings",
+					"pivot": [-4, 4, 0],
+					"cubes": [
+						{
+							"origin": [-25, -3, 0],
+							"size": [21, 14, 0],
+							"uv": {
+								"north": {"uv": [0, 17], "uv_size": [21, 14]},
+								"east": {"uv": [33, 0], "uv_size": [0, 14]},
+								"south": {"uv": [22, 17], "uv_size": [21, 14]},
+								"west": {"uv": [33, 0], "uv_size": [0, 14]},
+								"up": {"uv": [33, 15], "uv_size": [21, 0]},
+								"down": {"uv": [54, 15], "uv_size": [-21, 0]}
+							}
+						}
+					]
+				},
+				{
+					"name": "wing_right",
+					"parent": "wings",
+					"pivot": [4, 4, 0],
+					"cubes": [
+						{
+							"origin": [4, -3, 0],
+							"size": [21, 14, 0],
+							"uv": {
+								"north": {"uv": [0, 32], "uv_size": [21, 14]},
+								"east": {"uv": [33, 0], "uv_size": [0, 14]},
+								"south": {"uv": [22, 32], "uv_size": [21, 14]},
+								"west": {"uv": [33, 0], "uv_size": [0, 14]},
+								"up": {"uv": [54, 15], "uv_size": [-21, 0]},
+								"down": {"uv": [54, 15], "uv_size": [-21, 0]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

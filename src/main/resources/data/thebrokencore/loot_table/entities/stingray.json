@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "thebrokencore:poisoned_sting",
+          "name": "thebrokencore:poisonous_sting",
           "functions": [
             {
               "function": "minecraft:set_count",

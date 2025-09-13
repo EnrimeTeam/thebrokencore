@@ -1,0 +1,55 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.bateye.fly": {
+			"loop": true,
+			"animation_length": 0.75,
+			"bones": {
+				"bateye": {
+					"rotation": {
+						"vector": [10, 0, 0]
+					}
+				},
+				"wing_left": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.1875": {
+							"vector": [0, 40, 0],
+							"easing": "easeOutQuad"
+						},
+						"0.5625": {
+							"vector": [0, -40, 0],
+							"easing": "easeInOutSine"
+						},
+						"0.75": {
+							"vector": [0, 0, 0],
+							"easing": "easeInQuad"
+						}
+					}
+				},
+				"wing_right": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.1875": {
+							"vector": [0, -40, 0],
+							"easing": "easeOutQuad"
+						},
+						"0.5625": {
+							"vector": [0, 40, 0],
+							"easing": "easeInOutSine"
+						},
+						"0.75": {
+							"vector": [0, 0, 0],
+							"easing": "easeInQuad"
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

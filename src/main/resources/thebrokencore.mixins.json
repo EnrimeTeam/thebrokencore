@@ -5,8 +5,9 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "FenceBlockMixin",
-    "PaneBlockMixin"
     "PaneBlockMixin",
+    "HostileEntityMixin",
+    "LivingEntityMixin",
     "KnightPaintingEyesMixin"
   ],
   "client": [],

@@ -9,11 +9,14 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
+import org.apache.logging.log4j.core.config.plugins.util.ResolverUtil;
 import org.enrime.thebrokencore.TheBrokenCoreMod;
 import org.enrime.thebrokencore.entity.custom.StingrayEntity;
+import org.enrime.thebrokencore.entity.custom.TestEntity;
 
 public class ModEntities {
     public static final EntityType<StingrayEntity> STINGRAY = registerEntity("stingray", StingrayEntity::new, SpawnGroup.WATER_AMBIENT, 2.3f, 0.4f);
+    public static final EntityType<TestEntity> TEST_ENTITY = registerEntity("test_entity", TestEntity::new, SpawnGroup.MONSTER, 1f, 1f);
 
     // TODO: EntityType.Builder can take too many parameters. Pass it as an argument?..
     private static <T extends Entity> EntityType<T> registerEntity(String entityName, EntityType.EntityFactory<T> factory, SpawnGroup spawnGroup, float width, float height) {
@@ -32,5 +35,6 @@ public class ModEntities {
         TheBrokenCoreMod.LOGGER.info("Registering entities for " + TheBrokenCoreMod.MOD_ID);
 
         FabricDefaultAttributeRegistry.register(STINGRAY, StingrayEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(TEST_ENTITY, TestEntity.createAttributes());
     }
 }

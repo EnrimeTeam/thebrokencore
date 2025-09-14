@@ -2,9 +2,8 @@ package org.enrime.thebrokencore.item;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.mob.MobEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
-import net.minecraft.item.SpawnEggItem;
+import net.minecraft.item.*;
+import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
@@ -22,6 +21,8 @@ public class ModItems {
             .rarity(Rarity.EPIC)
             .fireproof());
     public static final Item POISONOUS_STING = registerItem("poisonous_sting", PoisonousStingItem::new, new Item.Settings());
+
+    public static final Item TEST_POTION = registerItem("test_potion", ThrowablePotionItem::new, new Item.Settings());
 
     // ============ Spawn eggs ============
     public static final Item STINGRAY_SPAWN_EGG = registerSpawnEgg("stingray_spawn_egg", ModEntities.STINGRAY);

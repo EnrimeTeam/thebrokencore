@@ -7,7 +7,7 @@ import org.enrime.thebrokencore.magic_system.parameters.forms.*;
 import java.util.List;
 import java.util.Map;
 
-class SpellSystemData {
+public class SpellSystemData {
     public static final Parameter damage = new Parameter("Damage");
     public static final Parameter speed = new Parameter("Speed");
     public static final Parameter radius = new Parameter("Radius");

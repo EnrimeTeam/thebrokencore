@@ -1,8 +1,12 @@
 package org.enrime.thebrokencore.magic_system;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 import org.enrime.thebrokencore.magic_system.parameters.Parameter;
 import org.enrime.thebrokencore.magic_system.parameters.elements.*;
 import org.enrime.thebrokencore.magic_system.parameters.forms.*;
+import org.enrime.thebrokencore.util.MathHelper;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,6 +26,17 @@ public class SpellResult {
         this.primaryForm = builder.primaryForm;
         this.secondaryForms = builder.secondaryForms;
         this.parameterValues = builder.parameterValues;
+    }
+
+    public void apply(World world, LivingEntity caster, Vec3d direction){
+        direction.normalize();
+        primaryForm.instantiate(
+                element,
+                world,
+                caster,
+                caster.getPos(),
+                MathHelper.fromPitchYawDegrees(caster.getPitch(), caster.getYaw()),
+                secondaryForms);
     }
 
     public Element getElement() {

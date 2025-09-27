@@ -3,6 +3,7 @@ package org.enrime.thebrokencore.magic_system;
 import org.enrime.thebrokencore.magic_system.parameters.Parameter;
 import org.enrime.thebrokencore.magic_system.parameters.elements.*;
 import org.enrime.thebrokencore.magic_system.parameters.forms.*;
+import org.enrime.thebrokencore.util.MathHelper;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -220,8 +221,8 @@ public class SpellSystem {
         Map<Form, Double> formsPower = calculateFormsPower(spell);
         Map<Element, Double> elementsPower = calculateElementsPower(spell);
 
-        List<Map.Entry<Form, Double>> sortedForms = sortByPower(formsPower);
-        List<Map.Entry<Element, Double>> sortedElements = sortByPower(elementsPower);
+        List<Map.Entry<Form, Double>> sortedForms = MathHelper.sortByValue(formsPower);
+        List<Map.Entry<Element, Double>> sortedElements = MathHelper.sortByValue(elementsPower);
 
         Element element = sortedElements.getFirst().getKey();
 
@@ -240,13 +241,6 @@ public class SpellSystem {
                 .withSecondaryForms(secondaryForms)
                 .build();
     }
-    // TODO: extract in utils
-    private <K> List<Map.Entry<K, Double>> sortByPower(Map<K, Double> impacts) {
-        return impacts.entrySet()
-                .stream()
-                .sorted(Map.Entry.<K, Double>comparingByValue().reversed())
-                .toList();
-    }
 
     private Map<Parameter, Double> calculateGeneralParametersPower(SpellInput spell){
         Map<Parameter, Double> generalParameterValues = new HashMap<>();
@@ -258,7 +252,8 @@ public class SpellSystem {
         for (int slotIndex = 0; slotIndex < spell.size(); slotIndex++) {
             Element currentElement = spell.get(slotIndex);
             for (Parameter generalParameter : generalParameters) {
-                Double product = getParameterCoefficientOnSlot(slotIndex, generalParameter) * currentElement.getGeneralParameterImpact(generalParameter);
+                Double product = getParameterCoefficientOnSlot(slotIndex, generalParameter)
+                        * currentElement.getGeneralParameterImpact(generalParameter);
                 generalParameterValues.merge(generalParameter, product, Double::sum);
             }
         }
@@ -279,7 +274,8 @@ public class SpellSystem {
             }
             Element currentElement = spell.get(slotIndex);
             for (Form form : forms) {
-                Double product = getFormCoefficientOnSlot(slotIndex) * currentElement.getFormImpact(form);
+                Double product = getFormCoefficientOnSlot(slotIndex)
+                        * currentElement.getFormImpact(form);
                 formImpactValues.merge(form, product, Double::sum);
             }
         }
@@ -322,7 +318,7 @@ public class SpellSystem {
             if (primaryFormImpact < threshold.value()) break;
 
             Map<Form, Double> formImpactValues = calculateFormsPower(spell, threshold.slotPattern);
-            var sortedFormsOnPattern = sortByPower(formImpactValues);
+            var sortedFormsOnPattern = MathHelper.sortByValue(formImpactValues);
 
             for (var entry : sortedFormsOnPattern) {
                 if (entry.getKey().canBeSecondary()) {

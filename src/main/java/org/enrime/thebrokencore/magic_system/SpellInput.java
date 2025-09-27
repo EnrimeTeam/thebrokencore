@@ -28,8 +28,7 @@ public class SpellInput {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        SpellInput that = (SpellInput) o;
+        if (!(o instanceof SpellInput that)) return false;
         return Objects.equals(elementList, that.elementList);
     }
 

@@ -1,25 +1,19 @@
 package org.enrime.thebrokencore.magic_system.parameters;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.NoSuchElementException;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Parameter {
     private static final Map<String, Parameter> takenNamesToInstances = new HashMap<>();
     private final String name;
 
-    public static List<String> getTakenNames(){
-        //Deep copying, to make spoiling takenNamesToInstances data impossible with this getter
-        return List.copyOf(takenNamesToInstances.keySet().stream()
-                .map(String::new)
-                .collect(Collectors.toSet()));
+    public static Set<String> getTakenNames(){
+        return takenNamesToInstances.keySet();
     }
 
-    public static Parameter getParameterByName(String name) throws NoSuchElementException{
+    public static Parameter getParameterByName(String name) throws IllegalArgumentException{
         if(!takenNamesToInstances.containsKey(name)){
-            throw new NoSuchElementException("Attempted to use getParameterByName with a free name: " + name);
+            throw new IllegalArgumentException("Attempted to use getParameterByName with a free name: " + name);
         }
         return takenNamesToInstances.get(name);
     }

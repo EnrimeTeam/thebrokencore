@@ -2,6 +2,9 @@ package org.enrime.thebrokencore.util;
 
 import net.minecraft.util.math.Vec3d;
 
+import java.util.List;
+import java.util.Map;
+
 public class MathHelper {
     /**
      * Преобразует углы pitch и yaw в градусах в нормализованный вектор направления
@@ -10,7 +13,6 @@ public class MathHelper {
      * @return нормализованный вектор направления
      */
     public static Vec3d fromPitchYawDegrees(double pitchDegrees, double yawDegrees) {
-        // Конвертируем градусы в радианы и используем метод для радиан
         return fromPitchYawRadians(Math.toRadians(pitchDegrees), Math.toRadians(yawDegrees));
     }
 
@@ -26,5 +28,12 @@ public class MathHelper {
         double z = Math.cos(yawRad) * Math.cos(pitchRad);
 
         return new Vec3d(x, y, z);
+    }
+
+    public static <K> List<Map.Entry<K, Double>> sortByValue(Map<K, Double> impacts) {
+        return impacts.entrySet()
+                .stream()
+                .sorted(Map.Entry.<K, Double>comparingByValue().reversed())
+                .toList();
     }
 }

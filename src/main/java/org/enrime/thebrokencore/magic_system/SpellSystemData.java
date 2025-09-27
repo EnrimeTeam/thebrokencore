@@ -8,53 +8,53 @@ import java.util.List;
 import java.util.Map;
 
 public class SpellSystemData {
-    public static final Parameter damage = new Parameter("Damage");
-    public static final Parameter speed = new Parameter("Speed");
-    public static final Parameter radius = new Parameter("Radius");
-    public static final Parameter duration = new Parameter("Duration");
+    public static final Parameter DAMAGE = new Parameter("Damage");
+    public static final Parameter SPEED = new Parameter("Speed");
+    public static final Parameter RADIUS = new Parameter("Radius");
+    public static final Parameter DURATION = new Parameter("Duration");
 
-    public static final Element fire = new Element("Fire",
+    public static final Element FIRE = new Element("Fire",
             Map.of(
                     AuraForm.getInstance(), 0.1,
                     BallForm.getInstance(), 1.5,
                     ExplosionForm.getInstance(), 1.5),
             Map.of(
-                    damage, 1.5,
-                    speed, 0.1,
-                    radius, 0.5,
-                    duration, 0.2
+                    DAMAGE, 1.5,
+                    SPEED, 0.1,
+                    RADIUS, 0.5,
+                    DURATION, 0.2
             ));
-    public static final Element water = new Element("Water",
+    public static final Element WATER = new Element("Water",
             Map.of(),
             Map.of());
-    public static final Element air = new Element("Air",
+    public static final Element AIR = new Element("Air",
             Map.of(),
             Map.of());
-    public static final Element earth = new Element("Earth",
+    public static final Element EARTH = new Element("Earth",
             Map.of(),
             Map.of());
-    public static final Element end = new Element("End",
+    public static final Element END = new Element("End",
             Map.of(),
             Map.of());
-    public static final Element chaos = new Element("Chaos",
+    public static final Element CHAOS = new Element("Chaos",
             Map.of(),
             Map.of());
 
-    public static final List<Element> elements = List.of(
-            fire,
-            water,
-            air,
-            earth,
-            end,
-            chaos);
+    public static final List<Element> ELEMENTS = List.of(
+            FIRE,
+            WATER,
+            AIR,
+            EARTH,
+            END,
+            CHAOS);
 
-    public static final List<Parameter> parameters = List.of(
-            damage,
-            speed,
-            radius,
-            duration);
+    public static final List<Parameter> PARAMETERS = List.of(
+            DAMAGE,
+            SPEED,
+            RADIUS,
+            DURATION);
 
-    public static final List<Form> forms = List.of(
+    public static final List<Form> FORMS = List.of(
             AuraForm.getInstance(),
             BallForm.getInstance(),
             DirectedTeleportForm.getInstance(),

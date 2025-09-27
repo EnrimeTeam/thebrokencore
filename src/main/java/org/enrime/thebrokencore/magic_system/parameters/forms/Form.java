@@ -35,16 +35,13 @@ public abstract class Form{
         );
     }
 
-    public static List<String> getTakenNames(){
-        //Deep copying, to make spoiling takenNamesToInstances data impossible with this getter
-        return List.copyOf(takenNamesToInstances.keySet().stream()
-                .map(String::new)
-                .collect(Collectors.toSet()));
+    public static Set<String> getTakenNames(){
+        return takenNamesToInstances.keySet();
     }
 
-    public static Form getFormByName(String name) throws NoSuchElementException {
+    public static Form getFormByName(String name) throws IllegalArgumentException {
         if(!takenNamesToInstances.containsKey(name)){
-            throw new NoSuchElementException("Attempted to use getFormByName with a free name: " + name);
+            throw new IllegalArgumentException("Attempted to use getFormByName with a free name: " + name);
         }
         return takenNamesToInstances.get(name);
     }

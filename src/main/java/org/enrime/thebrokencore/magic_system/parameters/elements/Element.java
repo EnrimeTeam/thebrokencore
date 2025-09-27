@@ -4,14 +4,13 @@ import org.enrime.thebrokencore.magic_system.parameters.Parameter;
 import org.enrime.thebrokencore.magic_system.parameters.forms.*;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Element{
     private final Map<Form, Double> formImpacts;
-    public final double defaultFormImpact = 1.0;
+    public static final double DEFAULT_FORM_IMPACT = 1.0;
 
     private final Map<Parameter, Double> generalParameterImpact;
-    public final double defaultGeneralParameterImpact = 1.0;
+    public static final double DEFAULT_GENERAL_PARAMETER_IMPACT = 1.0;
 
     private final String name;
     private static final Map<String, Element> takenNamesToInstances = new HashMap<>();
@@ -26,16 +25,13 @@ public class Element{
         this.generalParameterImpact = Objects.requireNonNull(generalParameterImpact, "generalParameterCoefficients must not be null");
     }
 
-    public static List<String> getTakenNames(){
-        //Deep copying, to make spoiling takenNamesToInstances data impossible with this getter
-        return List.copyOf(takenNamesToInstances.keySet().stream()
-                .map(String::new)
-                .collect(Collectors.toSet()));
+    public static Set<String> getTakenNames(){
+        return takenNamesToInstances.keySet();
     }
 
-    public static Element getElementByName(String name) throws NoSuchElementException {
+    public static Element getElementByName(String name) throws IllegalArgumentException {
         if(!takenNamesToInstances.containsKey(name)){
-            throw new NoSuchElementException("Attempted to use getFormByName with a free name: " + name);
+            throw new IllegalArgumentException("Attempted to use getFormByName with a free name: " + name);
         }
         return takenNamesToInstances.get(name);
     }
@@ -45,7 +41,7 @@ public class Element{
     }
 
     public double getGeneralParameterImpact(Parameter parameter){
-        return generalParameterImpact.getOrDefault(parameter, defaultGeneralParameterImpact);
+        return generalParameterImpact.getOrDefault(parameter, DEFAULT_GENERAL_PARAMETER_IMPACT);
     }
 
     public double getFormImpact(String formName) throws NoSuchElementException, IllegalArgumentException {
@@ -54,7 +50,7 @@ public class Element{
     }
 
     public double getFormImpact(Form form){
-        return formImpacts.getOrDefault(form, defaultFormImpact);
+        return formImpacts.getOrDefault(form, DEFAULT_FORM_IMPACT);
     }
 
     public String getName(){

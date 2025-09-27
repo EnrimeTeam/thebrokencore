@@ -14,14 +14,14 @@ import java.util.List;
 import java.util.Map;
 
 public class SpellResult {
-    private boolean validity;
+    private final boolean isValid;
     private final Element element;
     private final Form primaryForm;
     private final List<Form> secondaryForms;
     private final Map<Parameter, Double> parameterValues;
 
     private SpellResult(Builder builder) {
-        this.validity = builder.validity;
+        this.isValid = builder.isValid;
         this.element = builder.element;
         this.primaryForm = builder.primaryForm;
         this.secondaryForms = builder.secondaryForms;
@@ -60,11 +60,11 @@ public class SpellResult {
     }
 
     public boolean isValid(){
-        return validity;
+        return isValid;
     }
 
     public static class Builder {
-        private boolean validity = true;
+        private boolean isValid = true;
         private Element element;
         private Form primaryForm;
         private List<Form> secondaryForms = new ArrayList<>();
@@ -80,7 +80,7 @@ public class SpellResult {
             return this;
         }
 
-        public Builder addSecondaryForm(Form secondaryForm) {
+        public Builder withSecondaryForm(Form secondaryForm) {
             this.secondaryForms.add(secondaryForm);
             return this;
         }
@@ -105,8 +105,8 @@ public class SpellResult {
             return this;
         }
 
-        public Builder withValidity(boolean validity){
-            this.validity = validity;
+        public Builder withValid(boolean isValid){
+            this.isValid = isValid;
             return this;
         }
 
@@ -122,7 +122,7 @@ public class SpellResult {
         }
 
         public SpellResult buildInvalid(){
-            validity = false;
+            isValid = false;
             return new SpellResult(this);
         }
     }

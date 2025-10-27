@@ -4,22 +4,31 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
+import org.enrime.thebrokencore.magic_system.SpellResult;
+import org.enrime.thebrokencore.magic_system.SpellSystemData;
+import org.enrime.thebrokencore.magic_system.parameters.forms.VanillaFireballForm;
+import org.enrime.thebrokencore.util.MathHelper;
 
 import java.util.List;
 
 public class TestItem extends Item {
+    private SpellResult spellResult;
+
     public TestItem(Settings settings) {
         super(settings);
+        spellResult = new SpellResult.Builder()
+                .withElement(SpellSystemData.FIRE)
+                .withPrimaryForm(VanillaFireballForm.getInstance())
+                .build();
     }
 
     @Override
     public ActionResult use(World world, PlayerEntity user, Hand hand) {
-        user.playSound(SoundEvents.BLOCK_ANVIL_FALL, 1.0F, 1.0F);
+        spellResult.apply(world, user, MathHelper.fromPitchYawDegrees(user.getPitch(), user.getYaw()));
         return ActionResult.SUCCESS;
     }
 

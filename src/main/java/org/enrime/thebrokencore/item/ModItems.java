@@ -36,6 +36,7 @@ public class ModItems {
     // ============ Spawn eggs ============
     public static final Item STINGRAY_SPAWN_EGG = registerSpawnEgg("stingray_spawn_egg", ModEntities.STINGRAY);
     public static final Item BATEYE_SPAWN_EGG = registerSpawnEgg("bateye_spawn_egg", ModEntities.BATEYE);
+    public static final Item CHAINBOUND_SPAWN_EGG = registerSpawnEgg("chainbound_spawn_egg", ModEntities.CHAINBOUND);
 
     private static Item registerSpawnEgg(String name, EntityType<? extends MobEntity> entityType) {
         var key = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TheBrokenCoreMod.MOD_ID, name));

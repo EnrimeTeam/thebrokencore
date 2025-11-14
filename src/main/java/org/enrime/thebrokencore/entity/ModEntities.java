@@ -11,11 +11,16 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import org.enrime.thebrokencore.TheBrokenCoreMod;
 import org.enrime.thebrokencore.entity.custom.BateyeEntity;
+import org.enrime.thebrokencore.entity.custom.ChainboundEntity;
 import org.enrime.thebrokencore.entity.custom.StingrayEntity;
 
 public class ModEntities {
+    // ============ Regular mobs ============
     public static final EntityType<StingrayEntity> STINGRAY = registerEntity("stingray", StingrayEntity::new, SpawnGroup.WATER_AMBIENT, 2.3f, 0.4f);
     public static final EntityType<BateyeEntity> BATEYE = registerEntity("bateye", BateyeEntity::new, SpawnGroup.MONSTER, 0.6f, 0.6f);
+
+    // ============ Bosses ============
+    public static final EntityType<ChainboundEntity> CHAINBOUND = registerEntity("chainbound", ChainboundEntity::new, SpawnGroup.MONSTER, 4.0f, 4.0f);
 
     // TODO: EntityType.Builder can take too many parameters. Pass it as an argument?..
     private static <T extends Entity> EntityType<T> registerEntity(String entityName, EntityType.EntityFactory<T> factory, SpawnGroup spawnGroup, float width, float height) {
@@ -35,5 +40,6 @@ public class ModEntities {
 
         FabricDefaultAttributeRegistry.register(STINGRAY, StingrayEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(BATEYE, BateyeEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(CHAINBOUND, ChainboundEntity.createAttributes());
     }
 }

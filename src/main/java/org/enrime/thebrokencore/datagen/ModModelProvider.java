@@ -2,7 +2,9 @@ package org.enrime.thebrokencore.datagen;
 
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.minecraft.client.data.*;
+import net.minecraft.client.data.BlockStateModelGenerator;
+import net.minecraft.client.data.ItemModelGenerator;
+import net.minecraft.client.data.Models;
 import org.enrime.thebrokencore.block.ModBlocks;
 import org.enrime.thebrokencore.item.ModItems;
 
@@ -35,7 +37,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModBlocks.BRICK_VERTICAL_SLAB.asItem());
 
         // ============ Spawn eggs ============
-        itemModelGenerator.registerSpawnEgg(ModItems.STINGRAY_SPAWN_EGG, 1592692, 16645630);
-        itemModelGenerator.registerSpawnEgg(ModItems.BATEYE_SPAWN_EGG, 15788495, 4854542);
+        itemModelGenerator.registerSpawnEgg(ModItems.STINGRAY_SPAWN_EGG, 0x184D74, 0xFDFDFE);
+        itemModelGenerator.registerSpawnEgg(ModItems.BATEYE_SPAWN_EGG, 0xF0E9CF, 0x4A130E);
+        itemModelGenerator.registerSpawnEgg(ModItems.CHAINBOUND_SPAWN_EGG, 0x6E391E, 0x8D8B76);
     }
 }

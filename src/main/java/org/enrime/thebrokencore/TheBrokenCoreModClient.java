@@ -4,6 +4,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import org.enrime.thebrokencore.entity.ModEntities;
 import org.enrime.thebrokencore.entity.client.renderer.BateyeEntityRenderer;
+import org.enrime.thebrokencore.entity.client.renderer.ChainboundEntityRenderer;
 import org.enrime.thebrokencore.entity.client.renderer.StingrayEntityRenderer;
 
 public class TheBrokenCoreModClient implements ClientModInitializer {
@@ -11,5 +12,6 @@ public class TheBrokenCoreModClient implements ClientModInitializer {
     public void onInitializeClient() {
         EntityRendererRegistry.register(ModEntities.STINGRAY, StingrayEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.BATEYE, BateyeEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.CHAINBOUND, ChainboundEntityRenderer::new);
     }
 }

@@ -16,7 +16,7 @@ import org.enrime.thebrokencore.entity.custom.TestEntity;
 
 public class ModEntities {
     public static final EntityType<StingrayEntity> STINGRAY = registerEntity("stingray", StingrayEntity::new, SpawnGroup.WATER_AMBIENT, 2.3f, 0.4f);
-    public static final EntityType<TestEntity> TEST_ENTITY = registerEntity("test_entity", TestEntity::new, SpawnGroup.MONSTER, 1f, 1f);
+    public static final EntityType<TestEntity> TEST_ENTITY = registerEntity("test_entity", TestEntity::new, SpawnGroup.MONSTER, 0.33f, 0.33f);
 
     // TODO: EntityType.Builder can take too many parameters. Pass it as an argument?..
     private static <T extends Entity> EntityType<T> registerEntity(String entityName, EntityType.EntityFactory<T> factory, SpawnGroup spawnGroup, float width, float height) {
